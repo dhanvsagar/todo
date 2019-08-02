@@ -1,1 +1,2 @@
 # todo
+Personal todo app
