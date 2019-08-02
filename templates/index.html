@@ -2,15 +2,36 @@
 <html>
 <head>
 <title>ToDo</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}"
 </head>
+
 <body>
+  <div id='titletext'>
+  <h1>TODO Main</h1>
+  </div>
 
-<h1>TODO Main</h1>
-
-<div id='form'>
-<input name='content' type='textbox'/>
-<input name='add' type='submit'/>
-</div>
+  <table>
+    <tr>
+      <th> Task </th>
+      <th> Added </th>
+      <th> Actions </th>
+    </tr>
+    {% for task in tasks %}
+      <tr>
+        <td> {{ task.content }} </td>
+        <td> {{ task.date_created.date() }} </td>
+        <td>
+          <a href="#"> Update </a>
+          <a href="#"> Delete </a>
+        </td>
+      <tr>
+      {% endfor %}
+  </table>
+  
+  <form id='form' action="/" method="POST">
+    <input name="content" id="content" type='text'/>
+    <input value="Add Task" type='submit'/>
+  </div>
 
 </body>
 </html>
