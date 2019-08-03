@@ -10,8 +10,8 @@
   <h1>TODO Main</h1>
   </div>
 
-  <form id='form' action="/" method="POST">
-    <input id="content" name="content" id="content" type='text'/>
+  <form id='form' action="/update/{{task.id}}" method="POST">
+    <input id="content" name="content" id="content" type='text' value={{task.content}}/>
     <input id="submit" value="Add Task" type='submit'/>
   </div>
 </hr>
